@@ -6,8 +6,9 @@ def caesar(word, shift)
     if alpha.include?(let.downcase) # putting the characters in downcase and looking for the index
       i = alpha.index(let.downcase)
       i += shift
-      i >= 26 # if the character index is higher than 26 it will start from index 1
+     if i >= 26 # if the character index is higher than 26 it will start from index 1
       i -= 26
+     end
     end
 
     if alpha.include?(let) # checking if char is downcase
@@ -17,5 +18,5 @@ def caesar(word, shift)
     else let = let # if char is not a letter it will stay the same.
     end
   }
-  word = split.join # changing the array back to a word
+  word = split.join("") # changing the array back to a word
 end
